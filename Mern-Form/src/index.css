@@ -17,52 +17,52 @@ body {
   width: 100%;
 }
 
-
-body{
+body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-.container{
+.container {
   background-color: #ece8e8;
   padding: 32px 48px;
   border-radius: 10px;
   width: 100%;
   max-width: 600px;
-  box-shadow:5px 5px 30px 1px black
+  box-shadow: 5px 5px 30px 1px black;
 }
-.container > h1{
+.container > h1 {
   margin-bottom: 20px;
 }
 
-.form_control{
+.form_control {
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  background: transparent;
 }
 .container div {
   display: flex;
   flex-direction: column;
 }
 
-.container input{
+.container input {
   width: 100%;
   font-size: 16px;
   padding: 10px;
   outline: none;
   border: none;
   border-bottom: 1px solid black;
+  background: transparent;
 }
 
-.container input::placeholder{
+.container input::placeholder {
   font-style: italic;
   font-size: 13px;
 }
 
-button{
+button {
   background-color: #d90ec2;
   border: none;
   width: 70%;

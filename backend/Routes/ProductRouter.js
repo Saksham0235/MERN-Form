@@ -6,7 +6,7 @@ router.get("/",ensureAuthenticated, async(req,res)=>{
     res.status(200).json([
         {
             name:"Samsung J2",
-            price:10000
+            price:"Rs 10000"
         },
         {
             name:"Iphone 15 Plus",

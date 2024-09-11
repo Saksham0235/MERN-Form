@@ -6,20 +6,19 @@ import { handleError, handleSuccess } from '../utils';
 const Login = () => {
     const navigate = useNavigate()
     const [loginInfo, setLoginInfo] = useState({
-        name: "",
         email: "",
         password: ""
     })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { name, email, password } = V;
+        const { name, email, password } = loginInfo;
 
-        if (!name || !email || !password) {
+        if (!email || !password) {
             return handleError("Please enter  all fields");
         }
         try {
-            const url = "http://localhost:8080/auth/signup"
+            const url = "http://localhost:8080/auth/login"
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -29,12 +28,14 @@ const Login = () => {
             })
 
             const data = await response.json();
-            const { success, message, error } = data;
+            const { success, message,jwtToken,name, error } = data;
             if (success) {
                 handleSuccess(message);
+                localStorage.setItem('token',jwtToken)
+                localStorage.setItem("loggedInUser",name)
                 setTimeout(() => {
-                    navigate("/login")
-                }, 2000)
+                    navigate("/home")
+                }, 1000)
             }
             else if (error) {
                 const details = error?.details[0].message;
