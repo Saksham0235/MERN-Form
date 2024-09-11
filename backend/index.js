@@ -3,9 +3,9 @@ require("dotenv").config();
 const app = express();
 // It is used in fetching data from the body
 const bodyParser=require("body-parser")
-require("../Models/db")
-const authRoute=require("../Routes/AuthRoutes")
-const productRoute=require("../Routes/ProductRouter")
+require("./Models/db")
+const authRoute=require("./Routes/AuthRoutes")
+const productRoute=require("./Routes/ProductRouter")
 // It is used in connecting with the frontend 
 // It makes our server opens to everyone to accept requests
 const cors=require("cors")
