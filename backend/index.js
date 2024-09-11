@@ -11,7 +11,7 @@ const productRoute=require("./Routes/ProductRouter")
 const cors=require("cors")
 const PORT = process.env.PORT || 8080;
 
-app.get("/",async(req,res)=>{
+app.get("/ping",async(req,res)=>{
     res.send("<h1>Welcome to Server</h1>")
 })
 app.use(bodyParser.json())
